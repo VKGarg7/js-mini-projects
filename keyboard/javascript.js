@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events keycodes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../style1.css">
-</head>
-<body>
-    <nav>
-        <a href="/" aria-current="page">Home</a>
-        <a href="www.youtube.com" target="_blank">Youtube</a>
-    </nav>
+const insert = document.getElementById('insert');
 
-    <div class="project">
-        <div class="insert">
-            <div id="key">
-                Press the key and watch magic
-            </div>
-        </div>
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+    <div class='color'>
+    <table>
+    <tr>
+      <th>Key</th>
+      <th>Keycode</th> 
+      <th>Code</th>
+    </tr>
+    <tr>
+      <td>${e.key === ' ' ? 'Space' : e.key}</td>
+      <td>${e.keyCode}</td> 
+      <td>${e.code}</td>
+    </tr>
+    
+  </table>
     </div>
-</body>
-
-<script src="javascript.js"></script>
-</html>
+  `;
+});
