@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events keycodes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style1.css">
+</head>
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="www.youtube.com" target="_blank">Youtube</a>
+    </nav>
+
+    <div class="project">
+        <div class="insert">
+            <div id="key">
+                Press the key and watch magic
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="javascript.js"></script>
+</html>
