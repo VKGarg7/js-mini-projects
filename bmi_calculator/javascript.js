@@ -1,26 +1,20 @@
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
+const form = document.querySelector('form')
 
-buttons.forEach(function (button) {
-  console.log(button)
-  button.addEventListener('click', function(e){
-    console.log(e);
-    console.log(e.target);
-    if(e.target.id === 'green'){
-      body.style.backgroundColor = e.target.id;
-    }
-    if(e.target.id === 'grey'){
-      body.style.backgroundColor = e.target.id;
-    }
-    if(e.target.id === 'white'){
-      body.style.backgroundColor = e.target.id;
-    }
-    if(e.target.id === 'blue'){
-      body.style.backgroundColor = e.target.id;
-    }
-    if(e.target.id === 'purple'){
-      body.style.backgroundColor = e.target.id;
-    }
-  })
+form.addEventListener('submit', function(e){
+  e.preventDefault();
 
-})
+  const height = parseInt(document.querySelector('#height').value)
+  const weight = parseInt(document.querySelector('#weight').value)
+  const results = parseInt(document.querySelector('#results'))
+
+  if(height === '' || height < 0 || isNaN(height)){
+    results.innerHTML = `Pleasse give a valid height ${height}`
+  }
+  else if(weight === '' || weight < 0 || isNaN(weight)){
+    results.innerHTML = `Pleasse give a valid height ${weight}`
+  }
+  else{
+    const bmi = (weight / (height * height) / 10000).toFixed(2)
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
